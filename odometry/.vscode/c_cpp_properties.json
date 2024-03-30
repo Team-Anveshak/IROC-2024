@@ -1,0 +1,26 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/gokul/ROS/iroc-2024/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/gokul/ROS/iroc-2024/src/IK_MP/include/**",
+        "/home/gokul/ROS/iroc-2024/src/Odometry/include/**",
+        "/home/gokul/ROS/iroc-2024/src/orb_slam3_ros/include/**",
+        "/home/gokul/ROS/iroc-2024/src/Pangolin-0.6/include/**",
+        "/home/gokul/ROS/iroc-2024/src/robot_localization/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+
+<robot name="galileo">
+
+  <link name="map"/>
+  <link name="odom"/>
+
+  <link name="base_link"></link>
+
+  <link name="camera_link"/>
+  <link name="camera_color_frame"></link>
+  <link name="camera_depth_frame"></link>
+  <link name="camera_color_optical_frame"></link>
+  <link name="camera_depth_optical_frame"></link>
+
+  <link name="imu_link"/>
+
+  <joint name="odom_joint" type="fixed">
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    <parent link="map"/>
+    <child link="odom"/>
+  </joint>
+
+  <joint name="base_joint" type="fixed">
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    <parent link="odom"/>
+    <child link="base_link"/>
+  </joint>
+ 
+  <joint name="camera_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.1235 0.03 0"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <joint name="camera_color_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="camera_color_frame"/>
+    <origin rpy="0.0006217 -0.0032857 0.0081147" xyz="0.0003 -0.00164409 0.0040"/>
+  </joint>
+
+  <joint name="camera_depth_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="camera_depth_frame"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+  </joint>
+
+  <joint name="camera_color_optical_joint" type="fixed">
+    <parent link="camera_color_frame"/>
+    <child link="camera_color_optical_frame"/>
+    <origin rpy="-1.18534 1.5620412 -0.3848473" xyz="0.00027563 0.015139 0.000095724"/>
+  </joint>
+
+  <joint name="camera_depth_optical_joint" type="fixed">
+    <parent link="camera_depth_frame"/>
+    <child link="camera_depth_optical_frame"/>
+    <origin rpy="-1.5707963 1.5707963 0" xyz="0.0 0.0 0.0"/>
+  </joint>
+
+  <joint name="imu_joint" type="fixed">
+    <origin rpy="0.0 0.0 0.0" xyz="-0.0965 -0.06 0"/>
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+  </joint>
+
+</robot>

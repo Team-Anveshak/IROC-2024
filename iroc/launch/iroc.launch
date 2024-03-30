@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node respawn="true" pkg="joy" type="joy_node" name="IROCdrivejoy" >
+    <remap from="joy" to="joy"/>
+     <param name="dev" type="string" value="/dev/input/js0" />
+   </node>
+   
+   <node name="joy_reassign" pkg="drive" type="joy.py" output="screen"/>   
+   
+</launch>
